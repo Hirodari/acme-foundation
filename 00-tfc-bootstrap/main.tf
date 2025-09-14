@@ -1,7 +1,7 @@
-data "tfe_oauth_client" "client" {
-  organization = var.tfc_organization
-  name         = var.github_oauth_client
-}
+# data "tfe_oauth_client" "client" {
+#   organization = var.tfc_organization
+#   name         = var.github_oauth_client
+# }
 
 data "tfe_organization" "tfc-org" {
   name = var.tfc_organization
