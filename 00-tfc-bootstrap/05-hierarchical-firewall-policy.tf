@@ -12,7 +12,7 @@ resource "tfe_workspace" "hierarchical-firewall-policy" {
   working_directory             = "05-hierarchical-firewall-policy"
   vcs_repo {
     identifier     = var.github_repo
-    oauth_token_id = data.tfe_oauth_client.client.oauth_token_id
+    oauth_token_id = var.oauth_token_id # data.tfe_oauth_client.client.oauth_token_id
   }
 }
 

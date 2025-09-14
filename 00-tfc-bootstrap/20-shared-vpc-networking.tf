@@ -15,7 +15,7 @@ resource "tfe_workspace" "shared-vpc-networking-dev" {
   ]
   vcs_repo {
     identifier     = var.github_repo
-    oauth_token_id = data.tfe_oauth_client.client.oauth_token_id
+    oauth_token_id = var.oauth_token_id # data.tfe_oauth_client.client.oauth_token_id
   }
 }
 
@@ -49,7 +49,7 @@ resource "tfe_workspace" "shared-vpc-networking-stg" {
   ]
   vcs_repo {
     identifier     = var.github_repo
-    oauth_token_id = data.tfe_oauth_client.client.oauth_token_id
+    oauth_token_id = var.oauth_token_id # data.tfe_oauth_client.client.oauth_token_id
   }
 }
 
@@ -83,7 +83,7 @@ resource "tfe_workspace" "shared-vpc-networking-prd" {
   ]
   vcs_repo {
     identifier     = var.github_repo
-    oauth_token_id = data.tfe_oauth_client.client.oauth_token_id
+    oauth_token_id = var.oauth_token_id # data.tfe_oauth_client.client.oauth_token_id
   }
 }
 

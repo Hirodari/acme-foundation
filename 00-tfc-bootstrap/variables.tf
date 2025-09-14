@@ -3,6 +3,13 @@ variable "tfc_organization" {
   type        = string
 }
 
+# to be deleted
+variable "oauth_token_id" {
+  description = "TFC VCS provider OAuth token id (starts with ot-...)"
+  type        = string
+}
+
+
 variable "org_id" {
   description = "GCP Organization ID"
   type        = string
