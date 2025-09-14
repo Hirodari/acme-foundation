@@ -1,11 +1,32 @@
-data "tfe_oauth_client" "client" {
-  organization = var.tfc_organization
-  name         = var.github_oauth_client
-}
+# data "tfe_oauth_client" "client" {
+#   organization = var.tfc_organization
+#   name         = var.github_oauth_client
+# }
 
 data "tfe_organization" "tfc-org" {
   name = var.tfc_organization
 }
+
+
+# added by me to be deleted
+variable "github_app_installation_id" {
+  description = "GitHub App installation ID (a number, e.g. 34659821)."
+  type        = number
+}
+
+# added by me to be deleted
+resource "tfe_workspace" "some_workspace" {
+  name         = "00-tfc-bootstrap"
+  organization = var.tfc_organization
+  working_directory = "00-tfc-bootstrap"
+
+  vcs_repo {
+    identifier                 = var.github_repo      # e.g. "Hirodari/acme-foundation"
+    github_app_installation_id = var.github_app_installation_id
+    branch                     = "main"
+  }
+}
+
 
 data "tfe_workspace" "bootstrap" {
   name         = "00-tfc-bootstrap"
